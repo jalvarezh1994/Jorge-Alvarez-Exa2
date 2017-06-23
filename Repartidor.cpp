@@ -18,3 +18,12 @@ void Repartidor::setDificultad(double Dificultad){
 double Repartidor::getDificultad(){
    return Dificultad;
 }
+
+void Repartidor::setDineroCasino(double DineroCasino){
+	this->DineroCasino=DineroCasino;
+}
+
+double Repartidor::getDineroCasino(){
+	return DineroCasino;
+}
+
