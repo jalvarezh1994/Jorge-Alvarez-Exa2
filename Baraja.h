@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include "Carta.h"
 
 using namespace std;
 
@@ -7,7 +8,9 @@ using namespace std;
 #define BARAJA_H
 class Baraja{
     protected:
+    	vector<Carta*> Cartas;
     public:
         Baraja();
+        vector<Carta*> getCartas();
 };
 #endif	
