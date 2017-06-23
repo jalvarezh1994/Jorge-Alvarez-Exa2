@@ -13,11 +13,10 @@
 
 using namespace std;
 
-void menuAdministrador(vector<Persona*>,vector<Carta*>,vector<Mesa*>);
+void menuAdministrador(vector<Persona*>,vector<Mesa*>);
 
 int main(){
 	vector<Persona*> vPersona;
-	vector<Carta*> vCarta;
 	vector<Mesa*> vMesa;
 	Administrador* adminDefecto=new Administrador("Admin",23,"1234",5,"Gerente Tiempo Completo",10000);
 	
@@ -37,11 +36,19 @@ int main(){
 			}
 		}
 	}
-
+	if (typeid(*personaActual)==typeid(Administrador)){
+		menuAdministrador(vPersona,vMesa);
+	}
 	//Deletes
+	for (int i = 0; i < vPersona.size(); ++i){
+		delete vPersona[i];
+	}
+	for (int i = 0; i < vMesa.size(); ++i){
+		delete vMesa[i];
+	}
 }
 
-void menuAdministrador(vector<Persona*> vPersona,vector<Carta*> vCarta,vector<Mesa*> vMesa){
+void menuAdministrador(vector<Persona*> vPersona,vector<Mesa*> vMesa){
 
 	int opcMenu;
 	do{
@@ -162,14 +169,16 @@ void menuAdministrador(vector<Persona*> vPersona,vector<Carta*> vCarta,vector<Me
 								cout<<"Rango: "<<" = "<<temporal->getRango()<<endl;
 								cout<<"Sueldo: "<<" = "<<temporal->getSueldo()<<endl;	
 							}
-							if (typeid(*vPersona[i])==typeid(Administrador)){
-								Administrador* temporal=reinterpret_cast<Administrador*>(vPersona[i]);
+							if (typeid(*vPersona[i])==typeid(Repartidor)){
+								Repartidor* temporal=reinterpret_cast<Repartidor*>(vPersona[i]);
 								cout<<"Dificultad: "<<" = "<<temporal->getDificultad()<<endl;
 								cout<<"Dinero del casino: "<<" = "<<temporal->getDineroCasino()<<endl;
 							}
-							if (typeid(*vPersona[i])==typeid(Administrador)){
-								Administrador* temporal=reinterpret_cast<Administrador*>(vPersona[i]);
-								cout<<"Dificultad: "<<" = "<<temporal->getDificultad()<<endl;
+							if (typeid(*vPersona[i])==typeid(Jugador)){
+								Jugador* temporal=reinterpret_cast<Jugador*>(vPersona[i]);
+								cout<<"Procedencia: "<<" = "<<temporal->getProcedencia()<<endl;
+								cout<<"Apodo: "<<" = "<<temporal->getApodo()<<endl;
+								cout<<"Dinero: "<<" = "<<temporal->getDinero()<<endl;
 							}
 							cout<<endl;
 						}
