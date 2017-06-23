@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 #include "Persona.h"
+#include "Repartidor.h"
+#include "Jugador.h"
 
 using namespace std;
 
@@ -12,6 +14,7 @@ class Administrador:public Persona{
         int Experiencia;
         string Rango;
         double Sueldo;
+        
     public:
         Administrador(string,int,string,int,string,double);
         Administrador();

@@ -12,6 +12,7 @@ class Jugador:public Persona{
         string Procedencia;
         string Apodo;
         double Dinero;
+        string Tipo="Jugador";
     public:
         Jugador(string,int,string,string,string,double);
         Jugador();
@@ -23,6 +24,8 @@ class Jugador:public Persona{
 
         double getDinero();
         void setDinero(double);
+
+        string tipoPersona="Repartidor";
 
 };
 #endif

@@ -11,6 +11,7 @@ class Repartidor:public Persona{
     protected:
         double Dificultad;
         double DineroCasino;
+
     public:
         Repartidor(string,int,string,double);
         Repartidor();

@@ -1,38 +1,39 @@
 #include "Jugador.h"
 
 Jugador::Jugador(){
-
+  tipoPersona="Jugador";
 }
 
 Jugador::Jugador(string Nombre,int Edad,string ID,string Procedencia,string Apodo,double Dinero){
-    this->Procedencia=Procedencia;
-    this->Apodo=Apodo;
-    this->Dinero=Dinero;
-    this->Nombre=Nombre;
-    this->Edad=Edad;
-    this->ID=ID;
+  this->Procedencia=Procedencia;
+  this->Apodo=Apodo;
+  this->Dinero=Dinero;
+  this->Nombre=Nombre;
+  this->Edad=Edad;
+  this->ID=ID;
+  tipoPersona="Jugador";
 }
 
 void Jugador::setProcedencia(string Procedencia){
-   this-> Procedencia=Procedencia;
+ this-> Procedencia=Procedencia;
 }
 
 string Jugador::getProcedencia(){
-   return Procedencia;
+ return Procedencia;
 }
 
 void Jugador::setApodo(string Apodo){
-   this-> Apodo=Apodo;
+ this-> Apodo=Apodo;
 }
 
 string Jugador::getApodo(){
-   return Apodo;
+ return Apodo;
 }
 
 void Jugador::setDinero(double Dinero){
-   this-> Dinero=Dinero;
+ this-> Dinero=Dinero;
 }
 
 double Jugador::getDinero(){
-   return Dinero;
+ return Dinero;
 }

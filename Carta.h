@@ -9,8 +9,9 @@ class Carta{
     protected:
         string Valor;
         string Simbolo;
+        string Color;
     public:
-        Carta(string,string);
+        Carta(string,string,string);
         Carta();
         string getValor();
         void setValor(string);

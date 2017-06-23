@@ -1,8 +1,9 @@
 #include "Carta.h"
 
-Carta::Carta(string Valor,string Simbolo){
+Carta::Carta(string Valor,string Simbolo,string Color){
     this->Valor=Valor;
     this->Simbolo=Simbolo;
+    this->Color=Color;
 }
 Carta::Carta(){
 
