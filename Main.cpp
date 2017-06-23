@@ -168,7 +168,6 @@ void menuAdministrador(vector<Persona*> vPersona,vector<Mesa*> vMesa){
 				cout<<"Menú listar"<<endl;
 				cout<<"1. Personas"<<endl;
 				cout<<"2. Mesas"<<endl;
-				cout<<"5. Salir"<<endl;
 				int opcListar;
 				cout<<"Ingrese la opción: ";
 				cin>>opcListar;
@@ -179,18 +178,18 @@ void menuAdministrador(vector<Persona*> vPersona,vector<Mesa*> vMesa){
 							cout<<"Nombre: "<<" = "<<vPersona[i]->getNombre()<<endl;
 							cout<<"Edad: "<<" = "<<vPersona[i]->getEdad()<<endl;
 							cout<<"ID: "<<" = "<<vPersona[i]->getID()<<endl;
-							if (personaActual->getTipo().compare("Administrador")==0){
+							if (vPersona[i]->getTipo().compare("Administrador")==0){
 								Administrador* temporal=dynamic_cast<Administrador*>(vPersona[i]);
 								cout<<"Experiencia: "<<" = "<<temporal->getExperiencia()<<endl;
 								cout<<"Rango: "<<" = "<<temporal->getRango()<<endl;
 								cout<<"Sueldo: "<<" = "<<temporal->getSueldo()<<endl; 
 							}
-							if (personaActual->getTipo().compare("Repartidor")==0){
+							if (vPersona[i]->getTipo().compare("Repartidor")==0){
 								Repartidor* temporal=dynamic_cast<Repartidor*>(vPersona[i]);
 								cout<<"Dificultad: "<<" = "<<temporal->getDificultad()<<endl;
 								cout<<"Dinero del casino: "<<" = "<<temporal->getDineroCasino()<<endl;
 							}
-							if (personaActual->getTipo().compare("Jugador")==0){
+							if (vPersona[i]->getTipo().compare("Jugador")==0){
 								Jugador* temporal=dynamic_cast<Jugador*>(vPersona[i]);
 								cout<<"Procedencia: "<<" = "<<temporal->getProcedencia()<<endl;
 								cout<<"Apodo: "<<" = "<<temporal->getApodo()<<endl;
