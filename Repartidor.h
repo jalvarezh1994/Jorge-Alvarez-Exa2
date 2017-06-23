@@ -22,5 +22,7 @@ class Repartidor:public Persona{
         double getDineroCasino();
         void setDineroCasino(double);
 
+        string getTipo();
+
 };
 #endif

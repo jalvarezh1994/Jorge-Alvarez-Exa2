@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <typeinfo>
 #include "Mesa.h"
 
 using namespace std;
@@ -25,7 +24,7 @@ class Persona{
         string getID();
         void setID(string);
 
-        virtual string getTipo();
+        virtual string getTipo()=0;
 
 };
 #endif

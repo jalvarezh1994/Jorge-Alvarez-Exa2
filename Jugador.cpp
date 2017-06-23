@@ -1,7 +1,7 @@
 #include "Jugador.h"
 
 Jugador::Jugador(){
-  tipoPersona="Jugador";
+  
 }
 
 Jugador::Jugador(string Nombre,int Edad,string ID,string Procedencia,string Apodo,double Dinero){
@@ -11,7 +11,6 @@ Jugador::Jugador(string Nombre,int Edad,string ID,string Procedencia,string Apod
   this->Nombre=Nombre;
   this->Edad=Edad;
   this->ID=ID;
-  tipoPersona="Jugador";
 }
 
 void Jugador::setProcedencia(string Procedencia){
@@ -36,4 +35,8 @@ void Jugador::setDinero(double Dinero){
 
 double Jugador::getDinero(){
  return Dinero;
+}
+
+string Jugador::getTipo(){
+	return "Jugador";
 }

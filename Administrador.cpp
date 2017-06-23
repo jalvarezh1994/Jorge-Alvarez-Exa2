@@ -1,7 +1,6 @@
 #include "Administrador.h"
 
 Administrador::Administrador(){
-	tipoPersona="Administrador";
 }
 
 Administrador::Administrador(string Nombre,int Edad,string ID,int Experiencia,string Rango,double Sueldo){
@@ -11,7 +10,6 @@ Administrador::Administrador(string Nombre,int Edad,string ID,int Experiencia,st
   this->Nombre=Nombre;
   this->Edad=Edad;
   this->ID=ID;
-  tipoPersona="Administrador";
 }
 
 void Administrador::setExperiencia(int Experiencia){
@@ -36,4 +34,8 @@ void Administrador::setSueldo(double Sueldo){
 
 double Administrador::getSueldo(){
  return Sueldo;
+}
+
+string Administrador::getTipo(){
+	return "Administrador";
 }

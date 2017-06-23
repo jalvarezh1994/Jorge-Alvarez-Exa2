@@ -1,8 +1,6 @@
 #include <iostream>
 #include <string>
 #include "Persona.h"
-#include "Repartidor.h"
-#include "Jugador.h"
 
 using namespace std;
 
@@ -26,6 +24,8 @@ class Administrador:public Persona{
 
         double getSueldo();
         void setSueldo(double);
+
+        string getTipo();
 
 };
 #endif
