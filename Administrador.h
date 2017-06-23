@@ -1,17 +1,19 @@
 #include <iostream>
 #include <string>
+#include "Persona.h"
 
 using namespace std;
 
 #ifndef ADMINISTRADOR_H
 #define ADMINISTRADOR_H
-class Administrador{
+
+class Administrador:public Persona{
     protected:
         int Experiencia;
         string Rango;
         double Sueldo;
     public:
-        Administrador(int,string,double);
+        Administrador(string,int,string,int,string,double);
         Administrador();
         int getExperiencia();
         void setExperiencia(int);

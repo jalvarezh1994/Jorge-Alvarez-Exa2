@@ -6,15 +6,15 @@ Main.o: Main.cpp Persona.h Administrador.h Jugador.h Repartidor.h Baraja.h Carta
  
 Persona.o: Persona.cpp Persona.h 
 	g++ -c Persona.cpp 
- 
+
 Administrador.o:  Administrador.h Administrador.cpp Persona.h 
-	g++ -c Administrador.cpp 
+	g++ -c Administrador.cpp
+
+Repartidor.o:  Repartidor.h Repartidor.cpp Persona.h 
+	g++ -c Repartidor.cpp  
  
 Jugador.o:  Jugador.h Jugador.cpp Persona.h 
 	g++ -c Jugador.cpp 
- 
-Repartidor.o:  Repartidor.h Repartidor.cpp Persona.h 
-	g++ -c Repartidor.cpp 
  
 Baraja.o: Baraja.cpp Baraja.h 
 	g++ -c Baraja.cpp 

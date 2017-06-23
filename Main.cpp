@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <typeinfo>
 #include "Persona.h"
 #include "Administrador.h"
 #include "Repartidor.h"
@@ -12,14 +13,23 @@
 
 using namespace std;
 
+void menuAdministrador(vector<Persona*>,vector<Carta*>,vector<Mesa*>);
+
 int main(){
 	vector<Persona*> vPersona;
-	vector<Administrador*> vAdministrador;
-	vector<Repartidor*> vRepartidor;
-	vector<Baraja*> vBaraja;
 	vector<Carta*> vCarta;
-	vector<Jugador*> vJugador;
 	vector<Mesa*> vMesa;
+	Administrador* adminDefecto=new Administrador("Admin",23,"1234",5,"Gerente Tiempo Completo",10000);
+	
+	//Autenticación
+	bool 
+	for (int i = 0; i < vPersona.size(); ++i){
+		
+	}
+}
+
+void menuAdministrador(vector<Persona*> vPersona,vector<Carta*> vCarta,vector<Mesa> vMesa){
+
 	int opcMenu;
 	do{
 		cout<<"Menú"<<endl;
@@ -27,11 +37,6 @@ int main(){
 		cout<<"2. Listar"<<endl;
 		cout<<"3. Modificar"<<endl;
 		cout<<"4. Eliminar"<<endl;
-		cout<<"5. Guardar en archivos de texto"<<endl;
-		cout<<"6. Leer de archivos de texto"<<endl;
-		cout<<"7. Guardar en binarios"<<endl;
-		cout<<"7. Leer de binarios"<<endl;
-		cout<<"8. Salir"<<endl;
 		cout<<"Ingrese opción: "<<endl;
 		cin>>opcMenu;
 		switch(opcMenu){
@@ -73,7 +78,7 @@ int main(){
 						cout<<"Ingrese sueldo: ";
 						cin>>sueldo;
 						Administrador* temporal=new Administrador(experiencia,rango,sueldo);
-						vAdministrador.push_back(temporal);
+						vPersona.push_back(temporal);
 						break;
 					}
 					case 3:{
@@ -81,7 +86,7 @@ int main(){
 						cout<<"Ingrese dificultad: ";
 						cin>>dificultad;
 						Repartidor* temporal=new Repartidor(dificultad);
-						vRepartidor.push_back(temporal);
+						vPersona.push_back(temporal);
 						break;
 					}
 					case 4:{
@@ -107,11 +112,9 @@ int main(){
 						string apodo;
 						cout<<"Ingrese apodo: ";
 						cin>>apodo;
-						double dinero;
-						cout<<"Ingrese dinero: ";
-						cin>>dinero;
+				
 						Jugador* temporal=new Jugador(procedencia,apodo,dinero);
-						vJugador.push_back(temporal);
+				
 						break;
 					}
 					case 7:{
@@ -151,16 +154,16 @@ int main(){
 
 					}break;
 					case 2:
-					for(int i=0;i<vAdministrador.size();i++){
-						cout<<"Experiencia"<<" = "<<vAdministrador[i]->getExperiencia();
-						cout<<"Rango"<<" = "<<vAdministrador[i]->getRango();
-						cout<<"Sueldo"<<" = "<<vAdministrador[i]->getSueldo();
+					for(int i=0;i<vPersona.size();i++){
+						cout<<"Experiencia"<<" = "<<vPersona[i]->getExperiencia();
+						cout<<"Rango"<<" = "<<vPersona[i]->getRango();
+						cout<<"Sueldo"<<" = "<<vPersona[i]->getSueldo();
 						cout<<endl;
 
 					}break;
 					case 3:
-					for(int i=0;i<vRepartidor.size();i++){
-						cout<<"Dificultad"<<" = "<<vRepartidor[i]->getDificultad();
+					for(int i=0;i<vPersona.size();i++){
+						cout<<"Dificultad"<<" = "<<vPersona[i]->getDificultad();
 						cout<<endl;
 
 					}break;
@@ -173,14 +176,9 @@ int main(){
 					for(int i=0;i<vCarta.size();i++){
 						cout<<"Valor"<<" = "<<vCarta[i]->getValor();
 						cout<<"Simbolo"<<" = "<<vCarta[i]->getSimbolo();
-						cout<<endl;
-
-					}break;
-					case 6:
-					for(int i=0;i<vJugador.size();i++){
-						cout<<"Procedencia"<<" = "<<vJugador[i]->getProcedencia();
-						cout<<"Apodo"<<" = "<<vJugador[i]->getApodo();
-						cout<<"Dinero"<<" = "<<vJugador[i]->getDinero();
+				
+						
+				
 						cout<<endl;
 
 					}break;
