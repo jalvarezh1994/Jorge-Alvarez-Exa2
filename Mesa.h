@@ -1,5 +1,8 @@
 #include <iostream>
 #include <string>
+#include "Persona.h"
+#include "Repartidor.h"
+#include "Jugador.h"
 
 using namespace std;
 
@@ -17,6 +20,9 @@ class Mesa{
 
         string getTipo();
         void setTipo(string);
+
+        vector<Jugador*> Jugadores;
+        Repartidor repartidor;
 
 };
 #endif

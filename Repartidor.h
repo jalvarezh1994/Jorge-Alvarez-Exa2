@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "Persona.h"
+#include "Baraja.h"
 
 using namespace std;
 
@@ -11,7 +12,7 @@ class Repartidor:public Persona{
     protected:
         double Dificultad;
         double DineroCasino;
-
+        Baraja baraja;
     public:
         Repartidor(string,int,string,double);
         Repartidor();
