@@ -3,6 +3,8 @@
 #include <string>
 #include <vector>
 #include <typeinfo>
+#include <cstdlib>
+#include <stdlib.h>
 #include "Persona.h"
 #include "Administrador.h"
 #include "Repartidor.h"
@@ -33,13 +35,17 @@ int main(){
 		if (Nombre.compare("salir")==0||ID.compare("salir")==0){
 			break;
 		}
-		
+		bool existeUsuario=false;
 		for (int i = 0; i < vPersona.size(); ++i){
 			if (Nombre.compare(vPersona[i]->getNombre())==0){
 				if (ID.compare(vPersona[i]->getID())==0){
 					personaActual=vPersona[i];
+					existeUsuario=true;
 				}
 			}
+		}
+		if (existeUsuario==false){
+			cout<<"No existe el usuario"<<endl;
 		}
 		//Si es un administrador
 		if (personaActual->getTipo().compare("Administrador")==0){
@@ -173,7 +179,7 @@ int main(){
 							}
 						}
 						break;
-					}
+					}//fin agregar
 					case 2:{
 						cout<<"Menú listar"<<endl;
 						cout<<"1. Personas"<<endl;
@@ -221,23 +227,43 @@ int main(){
 								break;
 							}
 						}
-						case 3:{
-							break;
+					}//fin listar
+					case 3:{
+
+					}//fin modificar
+					case 4:{
+						cout<<"Ingrese a listar para ver las posiciones"<<endl;
+						cout<<"Desea eliminar"<<endl;
+						cout<<"1. Persona"<<endl;
+						cout<<"2. Mesa"<<endl;
+						int respuesta;
+						cout<<"Ingrese opcion: ";
+						cin>>respuesta;
+						if (respuesta==1){
+							cout<<"Ingrese posicion: ";
+							int posPersona;
+							cin>>posPersona;
+							vPersona.erase(vPersona.begin()+posPersona);
+							cout<<"Eliminado"<<endl;
 						}
-						case 4:{
-							break;
+						if (respuesta==2){
+							cout<<"Ingrese posicion: ";
+							int posPersona;
+							cin>>posPersona;
+							vMesa.erase(vMesa.begin()+posPersona);
+							cout<<"Eliminado"<<endl;
 						}
-						case 5:{
-							break;
-						}
-					}
+					}//fin eliminar
 				}
 			}while(opcMenu!=5);
 		}
+		//Si es un repartidor
 		if (personaActual->getTipo().compare("Repartidor")==0){
-
+			cout<<"No se puede jugar con un repartidor"<<endl;
 		}
+		//Si es un jugador
 		if (personaActual->getTipo().compare("Jugador")==0){
+			vector<int> posiciones;
 
 		}
 		cout<<endl;

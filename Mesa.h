@@ -22,7 +22,7 @@ class Mesa{
         void setTipo(string);
 
         vector<Jugador*> Jugadores;
-        Repartidor repartidor;
+        Repartidor* repartidor;
 
 };
 #endif
