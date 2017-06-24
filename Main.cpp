@@ -264,7 +264,13 @@ int main(){
 		//Si es un jugador
 		if (personaActual->getTipo().compare("Jugador")==0){
 			vector<int> posiciones;
-
+			bool existeCarta;
+			do{
+				existeCarta=false;
+				int x=rand()%52;
+				for (int i = 0; i < 52; ++i){
+				}
+			} while (existeCarta==true);
 		}
 		cout<<endl;
 	}while(salir==false);
